@@ -7,11 +7,16 @@
 <body>
     <form action="/" method="POST">
         <label for="src-sentence">Source sentence: </label>
+        <br/>
         <textarea id="src-sentence" name="src-sentence" rows="4" cols="50"></textarea>
         <input type="submit" value="Submit">
-        <p>{{dest}}</p>
         {% if plot: %}
-            {% for url in urlList %}
+            <p>{{dest}}</p>
+            {% for url in encList %}
+                <h3>Encoder Layer {{num}}</h3>
+                <img src="data:image/png;base64,{{url}}">
+            {% endfor %}
+            {% for url in decList %}
                 <img src="data:image/png;base64,{{url}}">
             {% endfor %}
         {% endif %}
