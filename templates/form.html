@@ -13,7 +13,6 @@
         {% if plot: %}
             <p>{{dest}}</p>
             {% for url in encList %}
-                <h3>Encoder Layer {{num}}</h3>
                 <img src="data:image/png;base64,{{url}}">
             {% endfor %}
             {% for url in decList %}
