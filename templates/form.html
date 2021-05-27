@@ -1,1 +1,20 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <label for="src-sentence">Source sentence: </label>
+        <textarea id="src-sentence" name="src-sentence" rows="4" cols="50"></textarea>
+        <input type="submit" value="Submit">
+        <p>{{dest}}</p>
+        {% if plot: %}
+            {% for url in urlList %}
+                <img src="data:image/png;base64,{{url}}">
+            {% endfor %}
+        {% endif %}
+    </form>
+</body>
+</html>
